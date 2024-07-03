@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import TodoList from './components/TodoList';
+import TodoList from './componentes/ListaAfazeres';
 
 function App() {
-  const todos = ['Estudar React', 'Fazer exercícios', 'Ler um livro'];
+  const todos = ['Fazer o tema de técnico', 'Jantar', 'Tomar banho', 'Dormir'];
 
   return (
     <div className="App">
-      <h1>Lista de Tarefas</h1>
+      <h1>tarefas a fazer</h1>
       <TodoList todos={todos} />
     </div>
   );

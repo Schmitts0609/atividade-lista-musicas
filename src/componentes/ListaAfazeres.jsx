@@ -1,7 +1,7 @@
 import React from 'react';
-import './TodoList.css';
+import './ListaAfazeres.css';
 
-const TodoList = ({ todos }) => {
+const ListaAfazeres = ({ todos }) => {
   return (
     <ul>
       {todos.map((todo, index) => (
@@ -11,4 +11,4 @@ const TodoList = ({ todos }) => {
   );
 };
 
-export default TodoList;
+export default ListaAfazeres;
