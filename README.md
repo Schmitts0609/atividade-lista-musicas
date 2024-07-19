@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1> Lista de músicas favoritas</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Descrição**: 
 
-## Available Scripts
+Este projeto é uma aplicação React simples que permite aos usuários adicionar e deletar suas músicas favoritas. A aplicação consiste em um campo de entrada de texto, um botão "Adicionar Música" e uma lista de músicas adicionadas. Cada música na lista tem um botão "Deletar" que remove a música da lista.
 
-In the project directory, you can run:
+**Instalação**:
 
-### `npm start`
+Clone o repositório usando `git clone <url-do-repositório>``
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instale as dependências usando `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Inicie o servidor de desenvolvimento usando `npm start`
 
-### `npm test`
+Abra a aplicação em seu navegador web em http://localhost:3000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Uso**:
 
-### `npm run build`
+Digite o nome da sua música favorita no campo de entrada de texto
+Clique no botão "Adicionar Música" para adicionar a música à lista
+Clique no botão "Deletar" ao lado de uma música para removê-la da lista
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2>Componentes:</h2>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>App.js</h3>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Este é o componente principal da aplicação que renderiza toda a aplicação. Ele contém os seguintes componentes:
 
-### `npm run eject`
+Um campo de entrada de texto para digitar o nome da música
+Um botão "Adicionar Música" para adicionar a música à lista
+Um componente ListaMusicas que exibe a lista de músicas adicionadas
+ListaMusicas.js
+Este componente renderiza uma lista de músicas. Cada item da lista contém:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Um elemento span exibindo o nome da música
+Um botão "Deletar" que remove a música da lista quando clicado
+useState Hook
+O hook useState é usado para armazenar a lista de músicas no estado da aplicação. O estado é inicializado como um array vazio e atualizado quando uma nova música é adicionada ou uma música existente é deletada.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**onDelete Função**
+Esta função é chamada quando o botão "Deletar" é clicado ao lado de uma música. Ela filtra a lista de músicas para remover a música com o índice correspondente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**adicionar Função**
+Esta função é chamada quando o botão "Adicionar Música" é clicado. Ela adiciona uma nova música à lista com o valor de entrada e limpa o campo de entrada.
