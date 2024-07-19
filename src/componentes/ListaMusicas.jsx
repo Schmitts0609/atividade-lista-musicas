@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './ListaMusicas.css';
-
 
 const ListaMusicas = ({ todos }) => {
   return (
@@ -10,25 +9,27 @@ const ListaMusicas = ({ todos }) => {
       ))}
     </ul>
   );
-  
 };
-// function App() {
-//   const todos = [];
 
-//   const input_mus = document.getElementById('input-musica');
+function App() {
+  const [todos, setTodos] = useState([]);
+  const inputRef = useRef(null);
 
-//   function adicionar(){
-//     todos.push(input_mus.value);
-//   }
+  function adicionar() {
+    if (inputRef.current) {
+      setTodos([...todos, inputRef.current.value]);
+      inputRef.current.value = ''; // Clear the input field
+    }
+  }
 
-//   return (
-//     <div className="App">
-//       <h1>Lista de músicas favoritas</h1>
-//       <input id='input-musica' type='text' />
-//       <button id='enviar-musica' onClick={adicionar}>Adicionar Música</button>
-//       <TodoList todos={todos} />  
-//     </div>
-//   );
-// };
+  return (
+    <div className="App">
+      <h1>Lista de músicas favoritas</h1>
+      <input ref={inputRef} id='input-musica' type='text' />
+      <button id='enviar-musica' onClick={adicionar}>Adicionar Música</button>
+      <ListaMusicas todos={todos} />  
+    </div>
+  );
+};
 
-export default ListaMusicas;
+export default App;
